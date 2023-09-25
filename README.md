@@ -5,5 +5,11 @@ This repo is going to be used as an example for the Elite101 Code2College class 
 This project will be a python based fractal generator, that uses numPy and matplotlib to create fractals. 
 
 # Usage
-To run the fractal generator use the command: 
-'python fractalGenerator.py'
+## Examples
+### Fractal Generator
+Make sure both numPy and matplotlib are installed in the python environment, then run `python fractal.py` from the examples folder. It will prompt for a number of points that will be used as "anchor points" for the process of generating the fractal. The general algorithm for *n* anchor points is as follows:
+1. Pick any point on the plane to start at. 
+2. Choose an anchor point at random
+3. Move some percent towards the anchor point from where you are
+4. Mark down that new point
+5. Repeat steps 2-4, the more times you repeat the better the "resolution" of the resulting fractal will be
