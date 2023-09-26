@@ -1,2 +1,2 @@
 def method():
-  print("Hello")
+  print("Sam Kirk")
