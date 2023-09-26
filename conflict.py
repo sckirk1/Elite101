@@ -1,1 +1,2 @@
-print("Sam Kirk")
+def method():
+  print("Sam Kirk")
