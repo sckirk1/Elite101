@@ -1,4 +1,5 @@
 *.replit
 *.nix
+.idea
 poetry.lock
 pyproject.toml
