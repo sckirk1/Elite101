@@ -6,7 +6,7 @@ This project will be a collection of scripts and functions of mathematical games
 
 # Examples
 #### Fractal Generator
-Make sure both numPy and matplotlib are installed in the python environment, then run `python fractal.py` from the examples folder. It will prompt for a number of points that will be used as "anchor points" for the process of generating the fractal. The general algorithm for *n* anchor points is as follows:
+Make sure both numPy and matplotlib are installed in the python environment, then run `python examples/fractal.py` from the examples folder. It will prompt for a number of points that will be used as "anchor points" for the process of generating the fractal. The general algorithm for *n* anchor points is as follows:
 1. Pick any point on the plane to start at 
 2. Choose an anchor point at random
 3. Move some percent towards the anchor point from where you are
