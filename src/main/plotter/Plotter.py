@@ -1,4 +1,4 @@
-import utilities.FileSystemUtilities as fileUtils
+import src.main.utilities.FileSystemUtilities as fileUtils
 import matplotlib.pyplot as plt
 
 
@@ -11,13 +11,17 @@ class Plotter:
     X_AXIS_LABEL = 'Roll'
     Y_AXIS_LABEL = 'Probability'
     DEFAULT_PLOT_TITLE = 'Roll Distribution'
-    __PATH_TO_OUTPUT_DIRECTORY = '../out/'
+    __PATH_TO_OUTPUT_DIRECTORY = '../../../out/'
 
     def __init__(self, plotDatas=None, title=DEFAULT_PLOT_TITLE):
         if plotDatas is None:
             plotDatas = []
         self.__title = title
         self.__plotDatas = plotDatas
+
+    def addAllData(self, datasToAdd):
+        for data in datasToAdd:
+            self.addData(data)
 
     def addData(self, dataToAdd):
         self.__plotDatas.append(dataToAdd)
