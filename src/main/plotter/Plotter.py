@@ -47,6 +47,7 @@ class Plotter:
 
     def savePlot(self, fileName):
         fileUtils.createOutDirectoryIfNotPresent()
+        path = fileUtils.getPathToOutputDirectory(self) + fileName //FIX
         path = self.__PATH_TO_OUTPUT_DIRECTORY + fileName
         figure = self.__createFigure()
         figure.savefig(path)
