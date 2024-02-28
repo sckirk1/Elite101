@@ -1,4 +1,4 @@
-import src.main.utilities.FileSystemUtilities as fileUtils
+from main.utilities import FileSystemUtilities as fileUtils
 import matplotlib.pyplot as plt
 
 
@@ -11,7 +11,6 @@ class Plotter:
     X_AXIS_LABEL = 'Roll'
     Y_AXIS_LABEL = 'Probability'
     DEFAULT_PLOT_TITLE = 'Roll Distribution'
-    __PATH_TO_OUTPUT_DIRECTORY = '../../../out/'
 
     def __init__(self, plotDatas=None, title=DEFAULT_PLOT_TITLE):
         if plotDatas is None:
@@ -47,7 +46,5 @@ class Plotter:
 
     def savePlot(self, fileName):
         fileUtils.createOutDirectoryIfNotPresent()
-        path = fileUtils.getPathToOutputDirectory(self) + fileName //FIX
-        path = self.__PATH_TO_OUTPUT_DIRECTORY + fileName
         figure = self.__createFigure()
-        figure.savefig(path)
+        figure.savefig(fileUtils.getFileOutputPath(self, fileName))

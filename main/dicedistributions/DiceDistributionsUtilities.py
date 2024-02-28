@@ -1,5 +1,5 @@
-from ..plotter.Point import Point
-from ..plotter.PlotData import PlotData
+from main.plotter import Point
+from main.plotter import PlotData
 
 
 def getPointsFromDistribution(distribution):

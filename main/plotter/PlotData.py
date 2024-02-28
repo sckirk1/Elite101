@@ -1,4 +1,4 @@
-from enums.ChartColor import ChartColor
+from enums import ChartColor
 
 
 class PlotData:
