@@ -1,4 +1,4 @@
-from main.utilities import FileSystemUtilities as fileUtils
+from kirklib.utilities import FileSystemUtilities as fileUtils
 import matplotlib.pyplot as plt
 
 

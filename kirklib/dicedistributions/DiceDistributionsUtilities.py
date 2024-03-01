@@ -1,5 +1,5 @@
-from main.plotter import Point
-from main.plotter import PlotData
+from kirklib.plotter import Point
+from kirklib.plotter import PlotData
 
 
 def getPointsFromDistribution(distribution):

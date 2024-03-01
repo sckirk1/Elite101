@@ -17,5 +17,5 @@ def getFileOutputPath(objectWritingToFileSystem, fileName):
     outputPath = ''
     for directory in pathList:
         outputPath += '..' + os.sep
-        if directory == 'main':
+        if directory == 'kirklib':
             return outputPath + __OUTPUT_DIRECTORY_NAME + os.sep + fileName
