@@ -12,3 +12,5 @@ Make sure both numPy and matplotlib are installed in the python environment, the
 3. Move some percent towards the anchor point from where you are
 4. Mark down that new point
 5. Repeat steps 2-4, the more times you repeat the better the "resolution" of the resulting fractal will be
+
+6. This is a test
