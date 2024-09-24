@@ -1,6 +1,6 @@
 import os
 
-__PATH_TO_OUTPUT_DIRECTORY = '../../out'
+__PATH_TO_OUTPUT_DIRECTORY = '../out'
 
 
 def createOutDirectoryIfNotPresent():
