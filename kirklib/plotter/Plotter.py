@@ -48,3 +48,6 @@ class Plotter:
         fileUtils.createOutDirectoryIfNotPresent()
         figure = self.__createFigure()
         figure.savefig(fileUtils.getFileOutputPath(self, fileName))
+
+    def method_name():
+        print('Hello!') 
