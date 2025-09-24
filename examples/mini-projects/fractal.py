@@ -5,11 +5,12 @@ anchor_x_coords = []
 anchor_y_coords = []
 x_coords = []
 y_coords = []
-number_of_iterations = 10000
+number_of_iterations = 100000
 number_of_anchors = int(input("Number of anchor points: "))
+use_snowflake_generation = False 3
 
 # This is the percent we get closer to the anchor point
-# For the most part this works for n points. .5 gets weird in some cases 
+# For the most part this works for n points. .5 gets weird in some cases
 jump_percent = 1 / (number_of_anchors - 1)
 
 # Or if you want to specify it every time
@@ -33,19 +34,19 @@ x_coords.append(jump_percent * (anchor_x_coords[first_go] + starting_point_x))
 y_coords.append(jump_percent * (anchor_y_coords[first_go] + starting_point_y))
 for n in range(number_of_iterations):
     anchor_num = np.random.randint(0, number_of_anchors)
+    if not use_snowflake_generation:
+        # This isn't a perfect way to go a percent amount closer, but it works for going halfway, so I'll leave it
+        x_coords.append(jump_percent * (anchor_x_coords[anchor_num] + x_coords[len(x_coords) - 1]))
+        y_coords.append(jump_percent * (anchor_y_coords[anchor_num] + y_coords[len(y_coords) - 1]))
+    else:
+        # This also isn't a good way to do it. We need the absolute difference between the points, and then we should add
+        # the product of that and the percent to the point that is farther left (or down)
+        # But it makes fun pictures, so it doesn't matter
+        x_coords.append(anchor_x_coords[anchor_num] + jump_percent * (anchor_x_coords[anchor_num] - x_coords[len(x_coords) - 1]))
+        y_coords.append(anchor_y_coords[anchor_num] + jump_percent * (anchor_y_coords[anchor_num] - y_coords[len(y_coords) - 1]))
 
-    # This isn't a perfect way to go a percent amount closer, but it works for going halfway, so I'll leave it
-    x_coords.append(jump_percent * (anchor_x_coords[anchor_num] + x_coords[len(x_coords) - 1]))
-    y_coords.append(jump_percent * (anchor_y_coords[anchor_num] + y_coords[len(y_coords) - 1]))
 
-    # This also isn't a good way to do it. We need the absolute difference between the points, and then we should add
-    # the product of that and the percent to the point that is farther left (or down)
-    # But it makes fun pictures, so it doesn't matter
 
-    # point_x_coordinates.append(anchor_x_coordinates[anchor_num] + percent_of_jump * (
-    # anchor_x_coordinates[anchor_num] - point_x_coordinates[len(point_x_coordinates) - 1]))
-    # point_y_coordinates.append(anchor_y_coordinates[anchor_num] + percent_of_jump * (anchor_y_coordinates[
-    # anchor_num] - point_y_coordinates[len(point_y_coordinates) - 1]))
 
 plt.scatter(x_coords, y_coords, c='red', s=1)
 plt.scatter(anchor_x_coords, anchor_y_coords, c="blue")
