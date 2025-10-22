@@ -1,1 +1,1 @@
-REadme please
+Read me, and understand my repo
